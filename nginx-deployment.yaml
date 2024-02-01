@@ -21,3 +21,4 @@ spec:
         image: mikejc30/mywebapp-k8:latest
         ports:
         - containerPort: 8082
+

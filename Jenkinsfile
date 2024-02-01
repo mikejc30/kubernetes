@@ -25,7 +25,7 @@ pipeline {
     stage('Deploy') {
             steps {
               script {
-                   sh "kubectl apply -f nginx-daemonset.yaml -f nginx-service-daemonset.yaml"
+                   sh "kubectl apply -f nginx-daemonset.yaml -f nginx-daemon.yaml"
                 }
               }
             }

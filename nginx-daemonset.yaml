@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-daemonset
+  labels:
+    app: nginx
+spec:
+  replicas: 3  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      imagePullSecrets:
+      - name: mydockerhub
+      containers:
+      - name: nginx
+        image: mikejc30/mywebapp-k8:latest
+        ports:
+        - containerPort: 80
+
